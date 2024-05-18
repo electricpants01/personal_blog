@@ -6,11 +6,11 @@ import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
 import { defineConfig } from "astro/config";
 import markdoc from "@astrojs/markdoc";
+import vercel from "@astrojs/vercel/serverless";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 import remarkCodeTitles from 'remark-code-titles'
 import decapCmsOauth from "astro-decap-cms-oauth";
-import awsAmplify from "astro-aws-amplify";
 
 // Full Astro Configuration API Documentation:
 // https://docs.astro.build/reference/configuration-reference
@@ -52,5 +52,5 @@ export default defineConfig( /** @type {import('astro').AstroUserConfig} */{
       allowNodeBuiltins: true
     }
   },
-  adapter: awsAmplify(),
+  adapter: vercel(),
 });
